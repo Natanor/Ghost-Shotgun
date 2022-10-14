@@ -16,10 +16,12 @@ public class PlayerController : MonoBehaviour
     private Animator animator;
     public int trailAmount;
     public float spread;
+    public float flashTime;
 
     private GameManager gameManager;
     public GameObject shotPrefab;
     private GameObject muzzle;
+    private GameObject muzzleFlash;
 
 
     // Start is called before the first frame update
@@ -28,6 +30,7 @@ public class PlayerController : MonoBehaviour
         playerRb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         muzzle = transform.Find("Muzzle").gameObject;
+        muzzleFlash = muzzle.transform.Find("Shot Flash Light").gameObject;
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
     }
 
@@ -52,7 +55,20 @@ public class PlayerController : MonoBehaviour
             animator.SetTrigger("Shoot");
             gameManager.PlayShotSound();
             CreateTrails();
+            CreateFlash();
         }
+    }
+
+    private void CreateFlash()
+    {
+        muzzleFlash.SetActive(true);
+        StartCoroutine(TurnOffFlash());
+    }
+
+    private IEnumerator TurnOffFlash()
+    {
+        yield return new WaitForSeconds(flashTime);
+        muzzleFlash.SetActive(false);
     }
 
     private void CreateTrails()
