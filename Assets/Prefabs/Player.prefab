@@ -84,7 +84,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 2
   m_GravityScale: 1
-  m_Material: {fileID: 6200000, guid: 72dc2328ef92f3d4aabb817c898d9ebf, type: 2}
+  m_Material: {fileID: 6200000, guid: 1ea5eb8d6b1e974428312787f5ef9627, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
@@ -105,7 +105,7 @@ MonoBehaviour:
   spinPower: 400
   trailAmount: 5
   spread: 7
-  shotPrefab: {fileID: 7073311900164787835, guid: 4813fc95970610d43b6d575fe1f0dce4, type: 3}
+  shotPrefab: {fileID: 7073311900164787835, guid: 6a1939c2f9263f7419a9470b7670a720, type: 3}
 --- !u!60 &4964222711746011534
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -181,7 +181,7 @@ SpriteRenderer:
   m_SortingLayerID: -1775181785
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 860751482, guid: aaa04719dca0faf409877c038d85de32, type: 3}
+  m_Sprite: {fileID: 860751482, guid: a3b58c215e9c47a4994e86735d966597, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -202,7 +202,7 @@ Animator:
   m_GameObject: {fileID: 4964222711746011539}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 860fd2876f22b2b4a9069b9e3cbc0982, type: 2}
+  m_Controller: {fileID: 9100000, guid: 734b6d7c49df9674ebd17940e0de0582, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

@@ -46,3 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletText: {fileID: 0}
   shotSound: {fileID: 8300000, guid: d3247579c549643a5b3a95f9224eaf3c, type: 3}
+  bulletIcons:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
