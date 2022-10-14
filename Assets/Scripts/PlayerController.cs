@@ -70,7 +70,8 @@ public class PlayerController : MonoBehaviour
         GameObject trail = Instantiate(shotPrefab, muzzleLocation, transform.rotation);
         trail.transform.Rotate(Vector3.forward * Random.Range(-spread, spread));
 
-        float length = Physics2D.RaycastAll(muzzleLocation, trail.transform.right).First(x => !x.collider.gameObject.CompareTag("Player")).distance;
+        RaycastHit2D hit = Physics2D.RaycastAll(muzzleLocation, trail.transform.right).FirstOrDefault(x => !x.collider.gameObject.CompareTag("Player"));
+        float length = hit ? hit.distance : 50;
         trail.transform.localScale = new Vector3(length, trail.transform.localScale.y, trail.transform.localScale.z);
 
     }
