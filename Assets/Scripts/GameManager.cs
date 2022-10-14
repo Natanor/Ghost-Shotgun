@@ -7,18 +7,18 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     private int bullets;
-    private int maxBullets = 3;
     public TextMeshProUGUI bulletText;
     public AudioClip shotSound;
     private AudioSource cameraAudioSource;
-
+    private int maxBullets;
+    public GameObject[] bulletIcons;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        cameraAudioSource = GameObject.Find("Main Camera").GetComponent<AudioSource>();  
-
+        cameraAudioSource = GameObject.Find("Main Camera").GetComponent<AudioSource>();
+        maxBullets = bulletIcons.Length;
         ResetBulletCount();
 
     }
@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Reset"))
+        if (Input.GetButtonDown("Debug Reset"))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
@@ -37,7 +37,12 @@ public class GameManager : MonoBehaviour
     private void UpdateBulletCount(int count)
     {
         bullets = count;
-        bulletText.text = "Bullets: " + bullets;
+
+        for (int i=0; i < bulletIcons.Length; i++)
+        {
+
+            bulletIcons[i].SetActive(i < bullets);
+        }
     }
 
     public void ResetBulletCount()
