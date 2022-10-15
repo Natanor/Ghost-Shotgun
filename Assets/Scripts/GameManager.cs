@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -49,6 +50,11 @@ public class GameManager : MonoBehaviour
 
             bulletIcons[i].SetActive(i < bullets);
         }
+    }
+
+    public void AddBullets(int bulletsToAdd)
+    {
+        UpdateBulletCount(Math.Min(bullets + bulletsToAdd, maxBullets));
     }
 
     public void ResetBulletCount()
