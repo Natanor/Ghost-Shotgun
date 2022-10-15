@@ -124,4 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd7b00bf95d031e45b194e18c053c626, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 15
+  health: 11
+  sprites:
+  - {fileID: 1947030817, guid: 610ee23ae3f4a3647a8e87608ed435f4, type: 3}
+  - {fileID: 1554060934, guid: 610ee23ae3f4a3647a8e87608ed435f4, type: 3}

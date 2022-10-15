@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
 
     public float shotPower;
     public float spinPower;
+    private FollowPlayer followPlayerScript;
     private Rigidbody2D playerRb;
     private Animator animator;
     public int trailAmount;
@@ -25,6 +26,8 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        followPlayerScript = GameObject.Find("Main Camera").GetComponent<FollowPlayer>();
+
         playerRb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         muzzle = transform.Find("Muzzle").gameObject;
@@ -52,6 +55,7 @@ public class PlayerController : MonoBehaviour
             animator.SetTrigger("Shoot");
             gameManager.PlayShotSound();
             CreateTrails();
+            followPlayerScript.Shake();
         }
     }
 

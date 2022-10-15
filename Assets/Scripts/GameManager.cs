@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,9 +13,11 @@ public class GameManager : MonoBehaviour
     private AudioSource cameraAudioSource;
     private FollowPlayer followPlayerScript;
     private int maxBullets;
-    public GameObject[] bulletIcons;
+    public Image[] bulletIcons;
     public string nextScene;
 
+    public Sprite emptyBulletSprite;
+    public Sprite fullBulletSprite;
 
     public float winSlowDown;
     public float winZoom;
@@ -48,11 +51,11 @@ public class GameManager : MonoBehaviour
     {
         bullets = count;
 
-        for (int i=0; i < bulletIcons.Length; i++)
+        for (int i = 0; i < bulletIcons.Length; i++)
         {
-
-            bulletIcons[i].SetActive(i < bullets);
+            bulletIcons[i].sprite = i < bullets ? fullBulletSprite : emptyBulletSprite;
         }
+          
     }
 
     public void AddBullets(int bulletsToAdd)
@@ -96,7 +99,7 @@ public class GameManager : MonoBehaviour
         followPlayerScript.offset = Vector2.zero;
 
         yield return new WaitForSeconds(winTime);
-       
+        Time.timeScale = 1;
 
         if (nextScene == null || nextScene.Length == 0)
         {
