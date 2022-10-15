@@ -105,7 +105,7 @@ MonoBehaviour:
   spinPower: 400
   trailAmount: 5
   spread: 7
-  shotPrefab: {fileID: 7073311900164787835, guid: 6a1939c2f9263f7419a9470b7670a720, type: 3}
+  shotPrefab: {fileID: 7073311900164787835, guid: 4813fc95970610d43b6d575fe1f0dce4, type: 3}
 --- !u!60 &4964222711746011534
 PolygonCollider2D:
   m_ObjectHideFlags: 0

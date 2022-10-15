@@ -44,5 +44,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0495409317296d9498a758ceb8686a4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletText: {fileID: 0}
   shotSound: {fileID: 8300000, guid: d3247579c549643a5b3a95f9224eaf3c, type: 3}
+  bulletIcons:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  nextScene: BaseLevel
+  winSlowDown: 0.3
+  winZoom: 1.5
+  winTime: 1

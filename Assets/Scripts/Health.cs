@@ -2,19 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FollowPlayer : MonoBehaviour
+public class Health : MonoBehaviour
 {
-    public GameObject player;
-
+    public int health;
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(player.transform.position.x, player.transform.position.y, -10);
+        
+    }
+
+    public void LoseHealth(int hpLoss)
+    {
+        health -= hpLoss;
+        if (health < 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }

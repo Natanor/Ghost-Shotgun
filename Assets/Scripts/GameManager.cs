@@ -7,17 +7,23 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     private int bullets;
-    public TextMeshProUGUI bulletText;
     public AudioClip shotSound;
     private AudioSource cameraAudioSource;
+    private Camera cameraCamera;
     private int maxBullets;
     public GameObject[] bulletIcons;
+    public string nextScene;
 
+
+    public float winSlowDown;
+    public float winZoom;
+    public float winTime;
 
     // Start is called before the first frame update
     void Start()
     {
         cameraAudioSource = GameObject.Find("Main Camera").GetComponent<AudioSource>();
+        cameraCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
         maxBullets = bulletIcons.Length;
         ResetBulletCount();
 
@@ -63,5 +69,21 @@ public class GameManager : MonoBehaviour
     public void PlayShotSound()
     {
         cameraAudioSource.PlayOneShot(shotSound, 0.3f);
+    }
+
+    public void WinLevel()
+    {
+        StartCoroutine(WinEffect());
+    }
+
+    IEnumerator WinEffect()
+    {
+        Time.timeScale = winSlowDown;
+        float oldCameraDistance = cameraCamera.orthographicSize;
+        cameraCamera.orthographicSize = winZoom;
+        yield return new WaitForSeconds(winTime);
+        cameraCamera.orthographicSize = oldCameraDistance;
+        Time.timeScale = 1;
+        SceneManager.LoadScene(nextScene);
     }
 }
