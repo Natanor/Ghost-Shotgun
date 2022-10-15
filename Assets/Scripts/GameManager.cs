@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public AudioClip shotSound;
     private AudioSource cameraAudioSource;
     private Camera cameraCamera;
+    private FollowPlayer followPlayerScript;
     private int maxBullets;
     public GameObject[] bulletIcons;
     public string nextScene;
@@ -19,14 +20,18 @@ public class GameManager : MonoBehaviour
     public float winSlowDown;
     public float winZoom;
     public float winTime;
+    private bool won;
 
     // Start is called before the first frame update
     void Start()
     {
         cameraAudioSource = GameObject.Find("Main Camera").GetComponent<AudioSource>();
         cameraCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
+        followPlayerScript = GameObject.Find("Main Camera").GetComponent<FollowPlayer>();
+
         maxBullets = bulletIcons.Length;
         ResetBulletCount();
+        won = false;
 
     }
 
@@ -79,17 +84,36 @@ public class GameManager : MonoBehaviour
 
     public void WinLevel()
     {
-        StartCoroutine(WinEffect());
+        if (!won)
+        {
+            StartCoroutine(WinEffect());
+            won = true;
+        }
     }
 
     IEnumerator WinEffect()
     {
-        Time.timeScale = winSlowDown;
         float oldCameraDistance = cameraCamera.orthographicSize;
+        Vector2 oldOffset = followPlayerScript.offset;
+
+        Time.timeScale = winSlowDown;
         cameraCamera.orthographicSize = winZoom;
+        followPlayerScript.offset = Vector2.zero;
+
         yield return new WaitForSeconds(winTime);
-        cameraCamera.orthographicSize = oldCameraDistance;
-        Time.timeScale = 1;
-        SceneManager.LoadScene(nextScene);
+       
+        /*cameraCamera.orthographicSize = oldCameraDistance;
+        followPlayerScript.offset = oldOffset;
+        Time.timeScale = 1;*/
+
+
+        if (nextScene == null || nextScene.Length == 0)
+        {
+            Application.Quit();
+        }
+        else
+        {
+            SceneManager.LoadScene(nextScene);
+        }
     }
 }
