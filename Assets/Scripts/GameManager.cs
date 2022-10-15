@@ -10,7 +10,6 @@ public class GameManager : MonoBehaviour
     private int bullets;
     public AudioClip shotSound;
     private AudioSource cameraAudioSource;
-    private Camera cameraCamera;
     private FollowPlayer followPlayerScript;
     private int maxBullets;
     public GameObject[] bulletIcons;
@@ -26,7 +25,6 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         cameraAudioSource = GameObject.Find("Main Camera").GetComponent<AudioSource>();
-        cameraCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
         followPlayerScript = GameObject.Find("Main Camera").GetComponent<FollowPlayer>();
 
         maxBullets = bulletIcons.Length;
@@ -93,19 +91,12 @@ public class GameManager : MonoBehaviour
 
     IEnumerator WinEffect()
     {
-        float oldCameraDistance = cameraCamera.orthographicSize;
-        Vector2 oldOffset = followPlayerScript.offset;
-
         Time.timeScale = winSlowDown;
-        cameraCamera.orthographicSize = winZoom;
+        followPlayerScript.ChangeOrthSize(winZoom);
         followPlayerScript.offset = Vector2.zero;
 
         yield return new WaitForSeconds(winTime);
        
-        /*cameraCamera.orthographicSize = oldCameraDistance;
-        followPlayerScript.offset = oldOffset;
-        Time.timeScale = 1;*/
-
 
         if (nextScene == null || nextScene.Length == 0)
         {
