@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
 
     public float shotPower;
     public float spinPower;
+    private FollowPlayer followPlayerScript;
     private Rigidbody2D playerRb;
     private Animator animator;
     public int trailAmount;
@@ -27,6 +28,8 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        followPlayerScript = GameObject.Find("Main Camera").GetComponent<FollowPlayer>();
+
         playerRb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         muzzle = transform.Find("Muzzle").gameObject;
@@ -87,14 +90,26 @@ public class PlayerController : MonoBehaviour
         trail.transform.Rotate(Vector3.forward * Random.Range(-spread, spread));
 
         RaycastHit2D hit = Physics2D.RaycastAll(muzzleLocation, trail.transform.right).FirstOrDefault(x => !x.collider.gameObject.CompareTag("Player"));
-        float length = hit ? hit.distance : 50;
+
+        var health = hit.collider?.gameObject.GetComponent<Health>();
+        if (health != null)
+        {
+            health.LoseHealth(1);
+        }
+
+        if (hit.collider && hit.collider.gameObject.CompareTag("Target"))
+        {
+            gameManager.WinLevel();
+        }
+
+        float length = hit.collider ? hit.distance : 50;
         trail.transform.localScale = new Vector3(length, trail.transform.localScale.y, trail.transform.localScale.z);
 
     }
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        if (collision.gameObject.CompareTag("Ground") && collision.gameObject.transform.position.y < transform.position.y)
         {
             gameManager.ResetBulletCount();
         }
