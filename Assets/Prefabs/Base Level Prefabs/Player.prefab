@@ -59,7 +59,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4964222711746011539}
-  m_LocalRotation: {x: 0, y: 0, z: 0.15283158, w: -0.9882523}
+  m_LocalRotation: {x: 0, y: 0, z: -0.15283066, w: 0.9882524}
   m_LocalPosition: {x: 3.123195, y: -1.894609, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
@@ -67,7 +67,7 @@ Transform:
   - {fileID: 4964222711052689170}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -17.582}
 --- !u!50 &4964222711746011538
 Rigidbody2D:
   serializedVersion: 4
@@ -84,7 +84,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 2
   m_GravityScale: 1
-  m_Material: {fileID: 6200000, guid: 1ea5eb8d6b1e974428312787f5ef9627, type: 2}
+  m_Material: {fileID: 6200000, guid: 72dc2328ef92f3d4aabb817c898d9ebf, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5ae8d84b5a9cb4449d1e35a80801954, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shotPower: 5
+  shotPower: 8
   spinPower: 400
   trailAmount: 5
   spread: 7
@@ -124,7 +124,7 @@ PolygonCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 2, y: 1}
-    newSize: {x: 3, y: 1}
+    newSize: {x: 2, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -181,12 +181,12 @@ SpriteRenderer:
   m_SortingLayerID: -1775181785
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 860751482, guid: a3b58c215e9c47a4994e86735d966597, type: 3}
+  m_Sprite: {fileID: 1450928168, guid: aaa04719dca0faf409877c038d85de32, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 3, y: 1}
+  m_Size: {x: 2, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -202,7 +202,7 @@ Animator:
   m_GameObject: {fileID: 4964222711746011539}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 734b6d7c49df9674ebd17940e0de0582, type: 2}
+  m_Controller: {fileID: 9100000, guid: 860fd2876f22b2b4a9069b9e3cbc0982, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

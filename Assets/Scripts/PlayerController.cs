@@ -90,7 +90,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        if (collision.gameObject.CompareTag("Ground") && collision.gameObject.transform.position.y < transform.position.y)
         {
             gameManager.ResetBulletCount();
         }
