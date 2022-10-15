@@ -943,11 +943,11 @@ PrefabInstance:
     - target: {fileID: 3681356462003888502, guid: 7c1decc8b947c4447ab3dee127427f0c, type: 3}
       propertyPath: fullBulletSprite
       value: 
-      objectReference: {fileID: 21300000, guid: dc61cfab5c4e0d94d9c853a50529a176, type: 3}
+      objectReference: {fileID: 1947030817, guid: 610ee23ae3f4a3647a8e87608ed435f4, type: 3}
     - target: {fileID: 3681356462003888502, guid: 7c1decc8b947c4447ab3dee127427f0c, type: 3}
       propertyPath: emptyBulletSprite
       value: 
-      objectReference: {fileID: 21300000, guid: 69b9f86b9d3201c4ab04816acebf773b, type: 3}
+      objectReference: {fileID: 1554060934, guid: 610ee23ae3f4a3647a8e87608ed435f4, type: 3}
     - target: {fileID: 3681356462003888502, guid: 7c1decc8b947c4447ab3dee127427f0c, type: 3}
       propertyPath: bulletIcons.Array.size
       value: 3
