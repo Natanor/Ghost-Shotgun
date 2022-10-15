@@ -195,9 +195,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 222630067}
     m_Modifications:
+    - target: {fileID: 3970490229811633001, guid: 29e0f7e868d0a614d9ead8ff7c7279d7, type: 3}
+      propertyPath: m_Size.y
+      value: 31.02262
+      objectReference: {fileID: 0}
     - target: {fileID: 3970490229811633002, guid: 29e0f7e868d0a614d9ead8ff7c7279d7, type: 3}
       propertyPath: m_Name
       value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 3970490229811633003, guid: 29e0f7e868d0a614d9ead8ff7c7279d7, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 31.02262
       objectReference: {fileID: 0}
     - target: {fileID: 3970490229811633006, guid: 29e0f7e868d0a614d9ead8ff7c7279d7, type: 3}
       propertyPath: m_RootOrder
@@ -205,7 +213,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3970490229811633006, guid: 29e0f7e868d0a614d9ead8ff7c7279d7, type: 3}
       propertyPath: m_LocalScale.y
-      value: 31.02262
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3970490229811633006, guid: 29e0f7e868d0a614d9ead8ff7c7279d7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -725,9 +733,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 222630067}
     m_Modifications:
+    - target: {fileID: 3970490229811633001, guid: 29e0f7e868d0a614d9ead8ff7c7279d7, type: 3}
+      propertyPath: m_Size.y
+      value: 34.17061
+      objectReference: {fileID: 0}
     - target: {fileID: 3970490229811633002, guid: 29e0f7e868d0a614d9ead8ff7c7279d7, type: 3}
       propertyPath: m_Name
       value: Wall (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3970490229811633003, guid: 29e0f7e868d0a614d9ead8ff7c7279d7, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 34.17061
       objectReference: {fileID: 0}
     - target: {fileID: 3970490229811633006, guid: 29e0f7e868d0a614d9ead8ff7c7279d7, type: 3}
       propertyPath: m_RootOrder
@@ -735,7 +751,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3970490229811633006, guid: 29e0f7e868d0a614d9ead8ff7c7279d7, type: 3}
       propertyPath: m_LocalScale.y
-      value: 34.17061
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3970490229811633006, guid: 29e0f7e868d0a614d9ead8ff7c7279d7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -855,9 +871,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 222630067}
     m_Modifications:
+    - target: {fileID: 3970490229811633001, guid: 29e0f7e868d0a614d9ead8ff7c7279d7, type: 3}
+      propertyPath: m_Size.y
+      value: 16.78631
+      objectReference: {fileID: 0}
     - target: {fileID: 3970490229811633002, guid: 29e0f7e868d0a614d9ead8ff7c7279d7, type: 3}
       propertyPath: m_Name
       value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 3970490229811633003, guid: 29e0f7e868d0a614d9ead8ff7c7279d7, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 16.78631
       objectReference: {fileID: 0}
     - target: {fileID: 3970490229811633006, guid: 29e0f7e868d0a614d9ead8ff7c7279d7, type: 3}
       propertyPath: m_RootOrder
@@ -865,7 +889,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3970490229811633006, guid: 29e0f7e868d0a614d9ead8ff7c7279d7, type: 3}
       propertyPath: m_LocalScale.y
-      value: 16.786306
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3970490229811633006, guid: 29e0f7e868d0a614d9ead8ff7c7279d7, type: 3}
       propertyPath: m_LocalPosition.x
