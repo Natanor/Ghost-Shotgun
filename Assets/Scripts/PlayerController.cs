@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     private GameManager gameManager;
     public GameObject shotPrefab;
     private GameObject muzzle;
+    public float shotForcePower;
 
 
     // Start is called before the first frame update
@@ -85,6 +86,12 @@ public class PlayerController : MonoBehaviour
         if (hit.collider && hit.collider.gameObject.CompareTag("Target"))
         {
             gameManager.WinLevel();
+        }
+
+        if (hit.collider && hit.collider.gameObject.CompareTag("Physics"))
+        {
+            Rigidbody2D physicsRb =  hit.collider.gameObject.GetComponent<Rigidbody2D>();
+            physicsRb.AddForceAtPosition(new Vector2(trail.transform.right.x, trail.transform.right.y) * shotForcePower, hit.point);
         }
 
         float length = hit.collider ? hit.distance : 50;
