@@ -20,7 +20,7 @@ public class SlowText : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        lines = text.Split("\n\n");
+        lines = text.Split("\n\n\n");
         textMeshPro = GetComponent<TextMeshProUGUI>();
         lineNumber = -1;
         textMeshPro.text = "";
@@ -73,6 +73,12 @@ public class SlowText : MonoBehaviour
     IEnumerator addChar(int coLineNumber)
     {
         charNumber = 0;
+        if(textSpeed <= 0)
+        {
+            charNumber = lines[coLineNumber].Length;
+            UpdateText();
+        }
+
 
         while (charNumber < lines[coLineNumber].Length && lineNumber == coLineNumber)
         {

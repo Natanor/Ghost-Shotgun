@@ -191,8 +191,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4291673813
+  m_fontColor: {r: 0.8352941, g: 0.74509805, b: 0.8039216, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -271,9 +271,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dbfed8514ba01941ba07bdb5068be70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: "Congratulations! \n\n\nyou are a pumpkin murderer.\n\n\nGoodbye."
-  textSpeed: 11
-  nextScene: Credits
+  text: 'Art By
+
+    apollonean
+
+
+
+    Coding by
+
+    Natanor
+
+
+
+    #1 consultant
+
+    Mijetto
+
+
+
+    Fly
+    Sprite (free asset)
+
+    lil-cthulhu
+
+
+
+    Music
+
+    Finger Nails
+
+    From
+    Gambit vol 5 (Free asset)
+
+    by decade bridge
+
+
+
+    Sound FXS
+
+    From SoundBits
+    (Free asset)
+
+
+
+    Thanks for playing!'
+  textSpeed: -1
+  nextScene: Title Screen
 --- !u!1 &846324285
 GameObject:
   m_ObjectHideFlags: 0
@@ -378,7 +421,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_BackGroundColor: {r: 0.2901961, g: 0.23529412, b: 0.2901961, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0

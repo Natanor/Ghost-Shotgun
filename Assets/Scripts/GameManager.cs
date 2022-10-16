@@ -23,12 +23,15 @@ public class GameManager : MonoBehaviour
     public float winZoom;
     public float winTime;
     private bool won;
+    private GameObject player;
 
     // Start is called before the first frame update
     void Start()
     {
         cameraAudioSource = GameObject.Find("Main Camera").GetComponent<AudioSource>();
         followPlayerScript = GameObject.Find("Main Camera").GetComponent<FollowPlayer>();
+        player = GameObject.Find("Player");
+
 
         maxBullets = bulletIcons.Length;
         ResetBulletCount();
@@ -39,9 +42,14 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Debug Reset"))
+        if (Input.GetButtonDown("Reset"))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+
+        if (Input.GetButtonDown("Cancel"))
+        {
+            Application.Quit();
         }
 
     }
@@ -80,7 +88,7 @@ public class GameManager : MonoBehaviour
     
     public void PlayShotSound()
     {
-        cameraAudioSource.PlayOneShot(shotSound, 0.3f);
+        cameraAudioSource.PlayOneShot(shotSound);
     }
 
     public void WinLevel()
@@ -97,6 +105,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = winSlowDown;
         followPlayerScript.ChangeOrthSize(winZoom);
         followPlayerScript.offset = Vector2.zero;
+        player.GetComponent<Animator>().SetTrigger("Win");
 
         yield return new WaitForSeconds(winTime);
         Time.timeScale = 1;

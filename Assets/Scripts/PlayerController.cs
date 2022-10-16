@@ -85,6 +85,11 @@ public class PlayerController : MonoBehaviour
 
         if (hit.collider && hit.collider.gameObject.CompareTag("Target"))
         {
+            Animator animator = hit.collider.gameObject.GetComponent<Animator>();
+            if(animator != null)
+            {
+                animator.SetTrigger("Explode");
+            }
             gameManager.WinLevel();
         }
 

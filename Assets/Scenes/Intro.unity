@@ -271,16 +271,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dbfed8514ba01941ba07bdb5068be70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: 'Hello
+  text: 'All I feel is an all-consuming desire to destroy pumpkins.
 
 
-    How are you?
+    I found
+    a shotgun to possess.
 
 
-    Thats Great...
+    So let''s go.
 
-    i think'
-  textSpeed: 6
+
+
+    It''s shootin'' time.'
+  textSpeed: 20
   nextScene: Forest
 --- !u!1 &846324285
 GameObject:

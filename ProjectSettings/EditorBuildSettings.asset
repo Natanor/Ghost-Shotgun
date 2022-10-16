@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Forest.unity
     guid: 48fd111a7520c474ea537b6d4a85b6d2
   - enabled: 1
-    path: Assets/Scenes/Outro.unity
+    path: Assets/Scenes/Credits.unity
     guid: 949023ad756961c439123003003de63f
+  - enabled: 1
+    path: Assets/Scenes/Outro.unity
+    guid: c83ae36e68d0ef349ad1332fa38bfa07
   m_configObjects: {}
